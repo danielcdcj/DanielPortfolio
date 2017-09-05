@@ -7,18 +7,46 @@ import {
 } from 'react-router-dom'
 import FilterLink from './components/FilterLink';
 import Home from './Pages/Home';
-import About from './Pages/About';
+import { getSiteString, getSiteLanguages } from './API';
+import { setSiteString, setSiteLanguages } from './actions';
+import { connect } from 'react-redux';
 
 class App extends Component {
+  componentWillMount(){
+
+    // You can load data from server the server. Some are optional
+    // Note: if link to server, make sure to configure API/index.js
+
+    /*
+    // (optional) load available site languages from server
+    getSiteLanguages((response)=>{
+      this.props.dispatch(setSiteLanguages(response.data));
+    })
+    */
+
+    /*
+    // (optional) load strings from server
+    getSiteString((response)=>{
+      this.props.dispatch(setSiteString(response.data));
+    })
+    */
+  }
+
   render() {
     return (
       <Router>
         <div>
           <Route exact path="/" component={Home}/>
-          <Route path="/about" component={About}/>
         </div>
       </Router>
     );
   }
 }
-export default App;
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    language: state.language,
+    siteString: state.siteString
+  }
+}
+export default connect(mapStateToProps)(App);
