@@ -10,17 +10,5 @@ export const list = [
   {
     label: "Chinese_Simplified",
     display: "简体中文"
-  },
-  {
-    label: "Japanese",
-    display: "日本語"
-  },
-  {
-    label: "French",
-    display: "Français"
-  },
-  {
-    label: "Spanish",
-    display: "Español"
   }
 ];
