@@ -22,15 +22,27 @@ export default class Header extends Component {
   render(){
     return(
       <div id="header">
+        <div style={{height:"100vh"}}></div>
         <div style={{
             backgroundImage:"url('img/sand.jpg')",
             height:"100vh",
             width:"100vw",
             display: "table-cell",
             verticalAlign:"middle",
-            color:"white"
+            color:"white",
+            top:0,
+            position:"fixed",
+            zIndex:-1
           }}>
-          <div className="container">
+          <div className="container" style={{
+              height:"100vh",
+              width:"100vw",
+              display: "table-cell",
+              verticalAlign:"middle",
+              color:"white",
+              top:0,
+              position:"static",
+            }}>
             <table style={{width:"100%"}}><tbody><tr>
               <td style={{width:"10%"}}></td>
               <td>
