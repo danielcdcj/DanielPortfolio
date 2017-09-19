@@ -10,3 +10,11 @@
     font-family: Tangerine;
     src: url('/fonts/Tangerine-Regular.ttf');
 }
+@font-face {
+    font-family: GloriaHallelujah;
+    src: url('/fonts/GloriaHallelujah.ttf');
+}
+@font-face {
+    font-family: CraftyGirlsRegular;
+    src: url('/fonts/CraftyGirls-Regular.ttf');
+}

@@ -4,3 +4,12 @@ nav.affix {
     width: 100%;
     z-index:10;
 }
+.slick-dots li.slick-active button:before {
+  color: #88ff88;
+}
+.slick-dots li button::before {
+  color: #ff8888;
+}
+.slick-dots li button:before {
+  opacity: 1;
+}
