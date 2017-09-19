@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import Typed from 'typed.js';
 
 export default class Header extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      urlHeight:0
+    };
+  }
   // header is the component that locate above the navbar. Try put some text in the div and see.
   componentDidMount(){
     const options = {
@@ -15,14 +22,39 @@ export default class Header extends Component {
       backSpeed: 50
     }
     this.typed = new Typed(this.el, options);
+
+    var jQuery = window['jQuery'];
+    jQuery(window).on('resize', (event)=>{
+
+      this.setState({
+        windowWidth:window.innerWidth,
+        windowHeight:window.innerHeight
+      });
+
+      var header_name_height = jQuery("#header_name").outerHeight();
+      jQuery("#profile_picture").width(header_name_height);
+
+      var screen = window['screen'];
+      var urlHeight = Math.max(0, window.outerHeight - window.innerHeight);
+      var lastURLHeight = this.state.urlHeight;
+      this.setState({urlHeight})
+    });
+    var screen = window['screen'];
+    var urlHeight = Math.max(0, window.outerHeight - window.innerHeight);
+    var lastURLHeight = this.state.urlHeight;
+    this.setState({urlHeight})
+
+    var header_name_height = jQuery("#header_name").outerHeight();
+    jQuery("#profile_picture").width(header_name_height);
   }
   componentWillUnmount(){
     this.typed.destroy();
   }
   render(){
+
     return(
       <div id="header">
-        <div style={{height:"100vh"}}></div>
+        <div style={{zIndex:-2}}></div>
         <div style={{
             backgroundImage:"url('img/sand.jpg')",
             height:"100vh",
@@ -31,36 +63,33 @@ export default class Header extends Component {
             verticalAlign:"middle",
             color:"white",
             top:0,
-            position:"fixed",
             zIndex:-1
           }}>
-          <div className="container" style={{
+          <div style={{
               height:"100vh",
               width:"100vw",
               display: "table-cell",
               verticalAlign:"middle",
               color:"white",
-              top:0,
-              position:"static",
+              top:0
             }}>
-            <table style={{width:"100%"}}><tbody><tr>
-              <td style={{width:"10%"}}></td>
-              <td>
-                <div className="row">
-                  <div className="col-lg-7">
-                    <span style={{color:"#55aa55", fontSize:"1.2em"}}>Hi there, my name is</span><br />
-                    <span style={{color:"#0088cc", fontSize:"5em", fontFamily:"CraftyGirlsRegular"}}>Daniel</span><br />
-                  </div>
-                  <div className="col-lg-5 hidden-lg-down">
-                    <img src="img/daniel.jpg" style={{width:"80%", borderRadius:"2em"}} draggable={false}/>
-                  </div>
-                </div>
-
-                <span style={{color:"#333333", fontFamily:"UbuntuMono"}} ref={(el)=>{this.el = el}}/>
-
-              </td>
-              <td style={{width:"10%"}}></td>
-            </tr></tbody></table>
+            <div className="container" style={{textAlign:"center"}}>
+              <table style={{margin:"0 auto"}}><tbody>
+                <tr>
+                  <td>
+                    <div id="header_name">
+                      <span style={{color:"#55aa55", fontSize:"1.2em"}}>Hi there, my name is</span><br />
+                      <span style={{color:"#0088cc", fontSize:"5em", fontFamily:"CraftyGirlsRegular"}}>Daniel</span><br />
+                    </div>
+                  </td>
+                  <td>
+                    <img className="hidden-sm-down" id="profile_picture" src="img/daniel.jpg" style={{marginLeft:"1em", width:"80%", borderRadius:"2em"}} draggable={false}/>
+                  </td>
+                </tr>
+              </tbody></table>
+              <br />
+              <span style={{color:"#333333", fontFamily:"UbuntuMono"}} ref={(el)=>{this.el = el}}/>
+            </div>
           </div>
         </div>
       </div>

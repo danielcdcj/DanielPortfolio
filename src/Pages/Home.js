@@ -22,8 +22,6 @@ class Home_Component extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       zIndex:-1,
-      autoplay: true,
-      autoplaySpeed: 3000,
       arrows:false,
       dots: true
     };
@@ -35,7 +33,7 @@ class Home_Component extends Component {
       <div>
         <Header />
         <Navbar id="myNav" headerID="header" />
-        <div style={{backgroundImage:"url('img/workplace.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
+        <div id="projects" style={{backgroundImage:"url('img/workplace.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
           <span style={{fontSize:"1.5em"}}>MY PROJECTS</span>
           <hr style={{borderColor:"white"}}/>
           <Slider {...settings}>
@@ -76,12 +74,12 @@ class Home_Component extends Component {
               /></div>
           </Slider>
         </div>
-        <div style={{backgroundImage:"url('img/skill.png')", color:"white", paddingBottom:"1em", paddingLeft:"0.5em", paddingRight:"0.5em"}}>
+        <div id="skills" style={{backgroundImage:"url('img/skill.png')", color:"white", paddingBottom:"1em", paddingLeft:"0.5em", paddingRight:"0.5em"}}>
           <span style={{fontSize:"1.5em"}}>MY SKILLS</span>
 
           <hr style={{borderColor:"white"}}/>
           <div style={{paddingLeft:"1.0em", paddingRight:"1.0em"}}>
-            <div style={{textAlign:"center", fontSize:"0.7em"}}>My Confidence Level for Each Skill</div><br />
+            <div style={{textAlign:"center", fontSize:"0.7em"}}>My Familiarity Level for Each Skill</div><br />
             <div className="row">
               <div className="col-lg-6">
                 <SkillBar
@@ -152,7 +150,7 @@ class SliderItem extends Component {
       <div style={{zIndex:"-1 !important", paddingLeft:"0.5em", paddingRight:"0.5em"}}>
         <div className="w3-row" style={{width:"100%"}}>
           <div className="w3-col m6 l4">
-            <span style={{fontSize:"1.3em"}}><a style={{color:"white", fontSize:"1em"}} href={this.props.projectPage}>{this.props.title}</a></span>
+            <span style={{fontSize:"1.3em"}}><a style={{color:"white", fontSize:"1em"}} href={this.props.projectPage}>{this.props.title} <i className="fa fa-external-link"></i></a></span>
           </div>
           <div className="w3-col m6 l8" style={{paddingLeft:"0.5em", color:"white", fontFamily:"UbuntuMono"}}>
             <span style={{fontWeight:"bold", fontSize:"1em"}}>{this.props.technologies}</span><br />

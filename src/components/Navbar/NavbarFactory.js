@@ -98,7 +98,7 @@ class NavbarFactory extends Component {
 
               var isStaged = this.isStaged(item);
               return (
-                <a key={item.id + "_staged"} href="#" className={"w3-bar-item w3-button w3-hover-" + onHoverBackgroundColor} style={{...item.style, display:isStaged ? "block":"none"}}>{item.title}</a>
+                <a key={item.id + "_staged"} href={item.href} className={"w3-bar-item w3-button w3-hover-" + onHoverBackgroundColor} style={{...item.style, display:isStaged ? "block":"none"}}>{item.title}</a>
               );
             })}
             <a href="javascript:void(0)" className="w3-bar-item w3-button w3-right" style={{display:((items.length - numStaged) > 0 ? "block":"none")}} onClick={this.onHamburgerClicked}>&#9776;</a>

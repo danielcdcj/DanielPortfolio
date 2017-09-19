@@ -54,17 +54,14 @@ class Navbar extends Component {
           {
             id:"projects",
             title:"Projects",
-            stagePoint:470
+            stagePoint:470,
+            href:"#projects"
           },
           {
             id:"skills",
             title:"My Skills",
-            stagePoint:470
-          },
-          {
-            id:"contact",
-            title:"Contact Me",
-            stagePoint:600
+            stagePoint:470,
+            href:"#skills"
           }
         ]}
         brand={<div style={{fontWeight:"bold"}}>Daniel Hsieh</div>}

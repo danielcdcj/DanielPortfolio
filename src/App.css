@@ -13,3 +13,6 @@ nav.affix {
 .slick-dots li button:before {
   opacity: 1;
 }
+.typed-cursor {
+  color:rgba(0,0,0,0)
+}
