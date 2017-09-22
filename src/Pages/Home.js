@@ -33,6 +33,20 @@ class Home_Component extends Component {
       <div>
         <Header />
         <Navbar id="myNav" headerID="header" />
+        <div id="mobileApps" style={{backgroundImage:"url('img/writeApp.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
+          <span style={{fontSize:"1.5em"}}>MY MOBILE APP STORE</span>
+          <hr style={{borderColor:"white"}}/>
+          <div className="row">
+            <a href="https://itunes.apple.com/us/developer/cheng-ta-hsieh/id1111361894" className="offset-3 col-3 offset-md-3 col-md-2" style={{textAlign:"center", color:"white"}}>
+              <img src="img/app_store.png" style={{width:"100%"}}/>
+              <span>App Store</span>
+            </a>
+            <a href="https://play.google.com/store/apps/developer?id=Utoappia" className="col-3 offset-md-2 col-md-2" style={{textAlign:"center", color:"white"}}>
+              <img src="img/google_play.png" style={{width:"100%"}}/>
+              <span>Play Store</span>
+            </a>
+          </div>
+        </div>
         <div id="projects" style={{backgroundImage:"url('img/workplace.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
           <span style={{fontSize:"1.5em"}}>MY PROJECTS</span>
           <hr style={{borderColor:"white"}}/>
@@ -42,7 +56,18 @@ class Home_Component extends Component {
               projectPage={"https://devpost.com/software/mummify-lqigpf"}
               technologies={"RSA, jQuery, Bootstrap"}
               imgSrc={"img/Mummify.png"}
-              description={<div>Mummify lets users to easily do encryption on the chrome browser. It incorporates <span style={{color:"yellow"}}>RSA</span>, an asymmetric encryption algorithm, so that for online conversation, there's no need to exchange encryption key in person.<br />Mummify is an award winning project in NWHacks 2016 for the <span style={{color:"yellow"}}>"Best Privacy, Security or Crypto Hack"</span> award from PIA.</div>}
+              description={<div>Mummify lets users to easily do encryption on the chrome browser. It incorporates <span style={{color:"yellow"}}>RSA</span>, an asymmetric encryption algorithm, so that for online conversation, there's no need to exchange encryption key in person.<br />Mummify is an award winning project in NWHacks 2016 for the <span style={{color:"yellow"}}>"Best Privacy, Security or Crypto Hack"</span> award from <a style={{color:"#4BB749"}} href="https://www.privateinternetaccess.com/">Private Internet Access</a>.</div>}
+              /></div>
+            <div><SliderItem
+              title={"Daniel\'s Portfolio"}
+              projectPage={"/"}
+              technologies={"React.js, Redux"}
+              imgSrc={"img/Portfolio.png"}
+              description={<div>
+                <span>This is the portfolio page you are looking at right now ;)</span><br /><br />
+                <a href="https://github.com/danielcdcj/DanielPortfolio" className="btn btn-success" style={{fontSize:"1em", fontStyle:"normal"}}>
+                  <i className="fa fa-github"></i> See it on GitHub!</a>
+              </div>}
               /></div>
             <div><SliderItem
               title={"Bus Finder"}
@@ -50,13 +75,6 @@ class Home_Component extends Component {
               technologies={"iOS, Swift, REST API, MapKit"}
               imgSrc={"img/BusFinder.png"}
               description={'Using TransLink\'s API to request real time location and updated schedule of the buses in Vancouver.'}
-              /></div>
-            <div><SliderItem
-              title={"Daniel\'s Portfolio"}
-              projectPage={"/"}
-              technologies={"React.js, Redux"}
-              imgSrc={"img/Portfolio.png"}
-              description={'This is the portfolio page you are looking at right now ;)'}
               /></div>
             <div><SliderItem
               title={"UmbraChat"}

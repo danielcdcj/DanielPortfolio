@@ -110,7 +110,7 @@ class NavbarFactory extends Component {
               var onHoverBackgroundColor = fallbackValue("grey", item.onHoverBackgroundColor);
               var isStaged = this.isStaged(item);
               return (
-                <a key={item.id + "_unstaged"} href="#" className="w3-bar-item w3-button" style={{display:isStaged ? "none":"block"}}>{item.title}</a>
+                <a key={item.id + "_unstaged"} href={item.href} className="w3-bar-item w3-button" style={{display:isStaged ? "none":"block"}}>{item.title}</a>
               );
             })}
           </div>

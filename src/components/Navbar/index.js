@@ -52,15 +52,21 @@ class Navbar extends Component {
         headerID={this.props.headerID}
         items={[
           {
+            id:"mobileapps",
+            title:"Mobile Apps",
+            stagePoint:600,
+            href:"#mobileApps"
+          },
+          {
             id:"projects",
             title:"Projects",
-            stagePoint:470,
+            stagePoint:600,
             href:"#projects"
           },
           {
             id:"skills",
             title:"My Skills",
-            stagePoint:470,
+            stagePoint:600,
             href:"#skills"
           }
         ]}
