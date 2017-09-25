@@ -55,19 +55,22 @@ class Navbar extends Component {
             id:"mobileapps",
             title:"Mobile Apps",
             stagePoint:600,
-            href:"#mobileApps"
+            href:"mobileApps",
+            scrollTarget:true
           },
           {
             id:"projects",
             title:"Projects",
             stagePoint:600,
-            href:"#projects"
+            href:"projects",
+            scrollTarget:true
           },
           {
             id:"skills",
             title:"My Skills",
             stagePoint:600,
-            href:"#skills"
+            href:"skills",
+            scrollTarget:true
           }
         ]}
         brand={<div style={{fontWeight:"bold"}}>Daniel Hsieh</div>}

@@ -90,16 +90,23 @@ class NavbarFactory extends Component {
         <div id={"spacer_" + id}></div>
         <div id={id} style={{width:"100%", backgroundColor, backgroundImage, zIndex: 10}}>
           <div className="w3-bar">
-            <a id={id + "_brand"} href="#" className={"w3-bar-item w3-button"} style={{display:((shouldDisplayBrand({stickingToTop}, numStaged)) ? "block":"none")}}>
+            <a id={id + "_brand"} onClick={(e)=>{this.scrollToID("header", -50) }} className={"w3-bar-item w3-button"} style={{display:((shouldDisplayBrand({stickingToTop}, numStaged)) ? "block":"none")}}>
               {fallbackValue(<noscript />, this, "props", "brand")}
             </a>
             {items.map((item)=>{
               var onHoverBackgroundColor = fallbackValue("grey", item.onHoverBackgroundColor);
 
               var isStaged = this.isStaged(item);
-              return (
-                <a key={item.id + "_staged"} href={item.href} className={"w3-bar-item w3-button w3-hover-" + onHoverBackgroundColor} style={{...item.style, display:isStaged ? "block":"none"}}>{item.title}</a>
-              );
+              if(item.scrollTarget){
+                return (
+                  <a key={item.id + "_staged"} onClick={(e)=>{this.scrollToID(item.href, -50); this.onHamburgerClicked()}} className={"w3-bar-item w3-button w3-hover-" + onHoverBackgroundColor} style={{...item.style, display:isStaged ? "block":"none"}}>{item.title}</a>
+                );
+              } else {
+                return (
+                  <a key={item.id + "_staged"} href={item.href} className={"w3-bar-item w3-button w3-hover-" + onHoverBackgroundColor} style={{...item.style, display:isStaged ? "block":"none"}}>{item.title}</a>
+                );
+              }
+
             })}
             <a href="javascript:void(0)" className="w3-bar-item w3-button w3-right" style={{display:((items.length - numStaged) > 0 ? "block":"none")}} onClick={this.onHamburgerClicked}>&#9776;</a>
           </div>
@@ -109,9 +116,15 @@ class NavbarFactory extends Component {
             {items.map((item)=>{
               var onHoverBackgroundColor = fallbackValue("grey", item.onHoverBackgroundColor);
               var isStaged = this.isStaged(item);
-              return (
-                <a key={item.id + "_unstaged"} href={item.href} className="w3-bar-item w3-button" style={{display:isStaged ? "none":"block"}}>{item.title}</a>
-              );
+              if(item.scrollTarget){
+                return (
+                  <a key={item.id + "_unstaged"} onClick={(e)=>{this.scrollToID(item.href, -50); this.onHamburgerClicked()}} className="w3-bar-item w3-button" style={{display:isStaged ? "none":"block"}}>{item.title}</a>
+                );
+              } else {
+                return (
+                  <a key={item.id + "_unstaged"} href={item.href} className="w3-bar-item w3-button" style={{display:isStaged ? "none":"block"}}>{item.title}</a>
+                );
+              }
             })}
           </div>
         </div>
@@ -143,6 +156,10 @@ class NavbarFactory extends Component {
       }
     });
     return acc;
+  }
+  scrollToID(targetDivID, yOffset = 0){
+    var jQuery = window['jQuery'];
+    jQuery('html, body').animate({ scrollTop: jQuery('#' + targetDivID).offset().top + yOffset }, 'slow');
   }
 }
 
