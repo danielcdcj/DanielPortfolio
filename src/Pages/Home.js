@@ -110,7 +110,7 @@ class Home_Component extends Component {
                   barColor="#E54F27"/>
                 <SkillBar
                   title={"React.js, React Native, Redux"}
-                  percentage={95}
+                  percentage={80}
                   barColor="#61dafb"/>
                 <SkillBar
                   title={"Responsive UI Design"}
@@ -144,7 +144,7 @@ class Home_Component extends Component {
                   barColor="#ED1B24"/>
                 <SkillBar
                   title={"C#"}
-                  percentage={60}
+                  percentage={70}
                   barColor="#672678"/>
                 <SkillBar
                   title={"MATLAB"}
