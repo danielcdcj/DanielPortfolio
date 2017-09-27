@@ -56,7 +56,7 @@ class Home_Component extends Component {
               projectPage={"https://devpost.com/software/mummify-lqigpf"}
               technologies={"RSA, jQuery, Bootstrap"}
               imgSrc={"img/Mummify.png"}
-              description={<div>Mummify lets users to easily do encryption on the chrome browser. It incorporates <span style={{color:"yellow"}}>RSA</span>, an asymmetric encryption algorithm, so that for online conversation, there's no need to exchange encryption key in person.<br />Mummify is an award winning project in NWHacks 2016 for the <span style={{color:"yellow"}}>"Best Privacy, Security or Crypto Hack"</span> award from <a style={{color:"#4BB749"}} href="https://www.privateinternetaccess.com/">Private Internet Access</a>.</div>}
+              description={<div>Mummify lets users to easily do encryption on the chrome browser. It incorporates <span style={{color:"yellow"}}>RSA</span>, an asymmetric encryption algorithm, so that for online conversation, there's no need to exchange encryption key in person.<br />Mummify is an award winning project in <a href="https://nwhacks2016.devpost.com/" style={{color:"#42A469"}}>NWHacks 2016</a> for the <span style={{color:"yellow"}}>"Best Privacy, Security or Crypto Hack"</span> award from <a style={{color:"#4BB749"}} href="https://www.privateinternetaccess.com/">Private Internet Access</a>.</div>}
               /></div>
             <div><SliderItem
               title={"Daniel\'s Portfolio"}
