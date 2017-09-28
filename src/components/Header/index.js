@@ -57,7 +57,7 @@ export default class Header extends Component {
         <div style={{
             backgroundImage:"url('img/sand.jpg')",
             height:"100vh",
-            width:"100%",
+            width:"100vw",
             display: "table-cell",
             verticalAlign:"middle",
             color:"white",
@@ -66,7 +66,7 @@ export default class Header extends Component {
           }}>
           <div style={{
               height:"100vh",
-              width:"100%",
+              width:"100vw",
               display: "table-cell",
               verticalAlign:"middle",
               color:"white",
