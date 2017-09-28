@@ -40,7 +40,7 @@ class Home_Component extends Component {
               <div><HobbySliderItem
                 title={"Hackathon"}
                 imgSrc={"img/danielTheHacker.png"}
-                description={<div>My favorite social event is hackathon!<br /><br />Working intensively in a small group for 24 hours and trying to create something greate, I always learn new things, meet ambitious and bright people, and have a lot of fun.</div>}
+                description={<div>My favorite social event is hackathon!<br /><br />Working intensively in a small group for 24 hours and trying to create something great, I always learn new things, meet ambitious and bright people, and have a lot of fun.</div>}
                 /></div>
               <div><HobbySliderItem
                 title={"Food + Travel"}
