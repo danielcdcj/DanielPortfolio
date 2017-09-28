@@ -108,10 +108,10 @@ class NavbarFactory extends Component {
               }
 
             })}
-            <a href="javascript:void(0)" className="w3-bar-item w3-button w3-right" style={{display:((items.length - numStaged) > 0 ? "block":"none")}} onClick={this.onHamburgerClicked}>&#9776;</a>
+            <a href="javascript:void(0)" className="w3-bar-item w3-button w3-right" style={{display:((items.length - numStaged) > 0 ? "block":"none")}} onClick={(e)=>{this.onHamburgerClicked()}}>&#9776;</a>
           </div>
 
-          <div id="demo" className="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+          <div id="demo" className="w3-bar-block w3-hide">
 
             {items.map((item)=>{
               var onHoverBackgroundColor = fallbackValue("grey", item.onHoverBackgroundColor);
@@ -133,6 +133,7 @@ class NavbarFactory extends Component {
     );
   }
   onHamburgerClicked() {
+    console.log("hamburger clicked!")
     var x = document.getElementById("demo");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
