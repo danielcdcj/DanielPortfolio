@@ -104,13 +104,6 @@ class Home_Component extends Component {
               imgSrc={"img/UmbraChat.png"}
               description={'A secure chat application for complete anonymity.'}
               /></div>
-            <div><SliderItem
-              title={"Blend Of Colors"}
-              projectPage={"http://blendofcolors.com"}
-              technologies={"OpenCart CMS"}
-              imgSrc={"img/blendofcolors.png"}
-              description={'An Online Beauty Shop I made for my client.\n\nThe site was made using OpenCart with "ThemeGlobal Lite" theme.'}
-              /></div>
           </Slider>
         </div>
         <div id="skills" style={{backgroundImage:"url('img/skill.png')", color:"white", paddingBottom:"1em", paddingLeft:"0.5em", paddingRight:"0.5em"}}>
