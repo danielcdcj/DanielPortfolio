@@ -53,12 +53,11 @@ export default class Header extends Component {
   render(){
 
     return(
-      <div id="header">
-        <div style={{zIndex:-2}}></div>
+      <div id="header" style={{width:"100%"}}>
         <div style={{
             backgroundImage:"url('img/sand.jpg')",
             height:"100vh",
-            width:"100vw",
+            width:"100%",
             display: "table-cell",
             verticalAlign:"middle",
             color:"white",
@@ -67,7 +66,7 @@ export default class Header extends Component {
           }}>
           <div style={{
               height:"100vh",
-              width:"100vw",
+              width:"100%",
               display: "table-cell",
               verticalAlign:"middle",
               color:"white",

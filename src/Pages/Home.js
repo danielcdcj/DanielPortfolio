@@ -30,7 +30,7 @@ class Home_Component extends Component {
     var screenMin = Math.min(screenWidth, screenHeight);
 
     return(
-      <div>
+      <div style={{width:"100%"}}>
         <Header />
         <Navbar id="myNav" headerID="header" />
           <div id="aboutMe" style={{backgroundImage:"url('img/danielPattern.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
