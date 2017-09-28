@@ -55,7 +55,7 @@ class Home_Component extends Component {
             </Slider>
           </div>
         <div id="mobileApps" style={{backgroundImage:"url('img/writeApp.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
-          <span style={{fontSize:"1.5em"}}>MY MOBILE APP STORE</span>
+          <span style={{fontSize:"1.5em"}}>MY APP STORE</span>
           <hr style={{borderColor:"white"}}/>
           <div className="row">
             <a href="https://itunes.apple.com/us/developer/cheng-ta-hsieh/id1111361894" className="offset-3 col-3 offset-md-3 col-md-2" style={{textAlign:"center", color:"white"}}>
