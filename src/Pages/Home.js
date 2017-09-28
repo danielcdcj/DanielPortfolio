@@ -33,6 +33,27 @@ class Home_Component extends Component {
       <div>
         <Header />
         <Navbar id="myNav" headerID="header" />
+          <div id="aboutMe" style={{backgroundImage:"url('img/danielPattern.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
+            <span style={{fontSize:"1.5em"}}>MY HOBBIES</span>
+            <hr style={{borderColor:"white"}}/>
+            <Slider {...settings}>
+              <div><HobbySliderItem
+                title={"Hackathon"}
+                imgSrc={"img/danielTheHacker.png"}
+                description={<div>My favorite social event is hackathon!<br /><br />Working intensively in a small group for 24 hours and trying to create something greate, I always learn new things, meet ambitious and bright people, and have a lot of fun.</div>}
+                /></div>
+              <div><HobbySliderItem
+                title={"Food + Travel"}
+                imgSrc={"img/danielFoodieTraveller.png"}
+                description={<div>I'm a foodie; I travel to places to discover new food.<br /><br />In Summer 2017, I was fortunate to get a <a href="http://www.viarail.ca/en/150-pass" style={{color:"#FFC40B"}}>Canada 150 Youth Rail Pass</a> offerd by VIA Rail! I did a coast-to-coast train ride and had a great variaty of food along the way. The Altantic, the Canadian Shield, the Prairies, and the Rockies were spectacular!</div>}
+                /></div>
+              <div><HobbySliderItem
+                title={"Board Game"}
+                imgSrc={"img/danielPlaysBoardGames.png"}
+                description={<div>I may not be good at board games, but I enjoy the games a lot. Board games teach me how to plan ahead and combat challenges.<br /><br />Every game is unique in its own way, especially when playing against a human player.</div>}
+                /></div>
+            </Slider>
+          </div>
         <div id="mobileApps" style={{backgroundImage:"url('img/writeApp.png')", color:"white", paddingBottom:"2em", paddingLeft:"0.5em"}}>
           <span style={{fontSize:"1.5em"}}>MY MOBILE APP STORE</span>
           <hr style={{borderColor:"white"}}/>
@@ -180,6 +201,27 @@ class SliderItem extends Component {
           </div>
           <div className="w3-col m6 l8" style={{paddingLeft:"0.5em", color:"white", fontFamily:"UbuntuMono", fontSize:"1em"}}>
             <i>{this.props.description}</i>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+class HobbySliderItem extends Component {
+  render(){
+    return(
+      <div style={{zIndex:"-1 !important", paddingLeft:"0.5em", paddingRight:"0.5em"}}>
+        <div className="w3-row" style={{width:"100%"}}>
+          <div className="w3-col m6 l4">
+            <span style={{fontSize:"1.3em", color:"white", fontSize:"1em"}}>{this.props.title}</span>
+          </div>
+        </div>
+        <div className="w3-row" style={{width:"100%"}}>
+          <div className="w3-col m6 l4">
+            <img src={this.props.imgSrc} style={{borderRadius:"0.2em", width:"80%", margin:"auto"}} draggable="false"/>
+          </div>
+          <div className="w3-col m6 l8" style={{paddingLeft:"0.5em", color:"white", fontFamily:"UbuntuMono", fontSize:"1em"}}>
+            {this.props.description}
           </div>
         </div>
       </div>
