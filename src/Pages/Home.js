@@ -169,6 +169,15 @@ class Home_Component extends Component {
           </div>
         </div>
         <div style={{backgroundColor:"#333333", color:"white", paddingBottom:"0.5em", paddingTop:"0.5em", textAlign:"center", fontSize:"1em"}}>
+          <div className="row" style={{fontSize:"0.8em"}}>
+            <div className="col-sm-6">
+              <i className="fa fa-mobile"></i> (778) 938-6579
+            </div>
+            <div className="col-sm-6">
+              <i className="fa fa-envelope-o"></i> danielcdcj@gmail.com
+            </div>
+          </div>
+          <br />
           © Daniel Hsieh 2017
         </div>
       </div>
