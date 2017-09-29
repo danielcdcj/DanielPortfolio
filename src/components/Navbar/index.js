@@ -54,7 +54,7 @@ class Navbar extends Component {
           {
             id:"aboutMe",
             title:"About Me",
-            stagePoint:850,
+            stagePoint:1050,
             href:"aboutMe",
             scrollTarget:true
           },
@@ -77,6 +77,13 @@ class Navbar extends Component {
             title:"My Skills",
             stagePoint:600,
             href:"skills",
+            scrollTarget:true
+          },
+          {
+            id:"contactMe",
+            title:"Contact Me",
+            stagePoint:1050,
+            href:"contactMe",
             scrollTarget:true
           }
         ]}

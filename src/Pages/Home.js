@@ -8,8 +8,19 @@ import Navbar from '../components/Navbar';
 import Header from '../components/Header';
 //import { getSiteString } from '../API';
 import Slider from 'react-slick';
+import axios from 'axios';
 
 class Home_Component extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      contactMe:{
+        status:"none",  // "none" "danger" "success"
+        message:""
+      }
+    };
+  }
   componentDidMount(){
     var jQuery = window['jQuery'];
     //jQuery('#fullpage').fullpage();
@@ -168,17 +179,82 @@ class Home_Component extends Component {
             </div>
           </div>
         </div>
-        <div style={{backgroundColor:"#333333", color:"white", paddingBottom:"0.5em", paddingTop:"0.5em", textAlign:"center", fontSize:"1em"}}>
-          <div className="row" style={{fontSize:"0.8em"}}>
-            <div className="col-sm-6">
-              <i className="fa fa-mobile"></i> (778) 938-6579
+        <div id="contactMe" style={{backgroundImage:"url('img/contactMe.png')", color:"white", paddingBottom:"1em", paddingLeft:"0.5em", paddingRight:"0.5em"}}>
+          <span style={{fontSize:"1.5em"}}>LEAVE ME A MESSAGE</span>
+          <hr style={{borderColor:"white"}}/>
+          {(this.state.contactMe.status !== "none") ? (
+            <div className={"alert alert-"+ this.state.contactMe.status + " alert-dismissible fade show"} role="alert">
+              <button
+                type="button"
+                className="close"
+                onClick={(e)=>{
+                  var contactMeState = this.state.contactMe;
+                  var newContactMeState = Object.assign(contactMeState, {status:"none", message:""})
+                  this.setState({contactMe:newContactMeState})
+                }}>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              {this.state.contactMe.message}
             </div>
-            <div className="col-sm-6">
-              <i className="fa fa-envelope-o"></i> danielcdcj@gmail.com
+          ):(<div></div>)}
+
+          <div className="row">
+            <div className="col-md-6">
+              <label>Your Email</label>
+              <input ref="contactMe_email" className="form-control"/>
+              <label>Your Name</label>
+              <input ref="contactMe_name" className="form-control"/>
+            </div>
+            <div className="col-md-6">
+              <label>Message</label>
+              <textarea ref="contactMe_message" className="form-control" rows={4}></textarea>
+              <div style={{width:"100%", textAlign:"right"}}>
+                <button
+                  className="btn btn-success"
+                  onClick={(e)=>{
+                    var email = this.refs.contactMe_email.value;
+                    var name = this.refs.contactMe_name.value;
+                    var message = this.refs.contactMe_message.value;
+                    console.log(email,name,message)
+                    axios.get('https://emaildaniel.daniel.utoappia.com/api/send', {
+                      params:{
+                        email,name,message
+                      }
+                    })
+                    .then((response)=>{
+                      console.log(response)
+                      var contactMeState = this.state.contactMe;
+                      var newContactMeState = Object.assign(contactMeState, {status:"success", message:"Thanks, your message is sent!"})
+                      this.setState({contactMe:newContactMeState})
+                    })
+                    .catch((error)=>{
+                      //console.log(error.response.data)
+                      var contactMeState = this.state.contactMe;
+                      var newContactMeState = Object.assign(contactMeState, {status:"danger", message:error.response.data.message})
+                      this.setState({contactMe:newContactMeState})
+                    })
+                  }}><i className="fa fa-upload"></i> Submit</button>
+              </div>
+
             </div>
           </div>
-          <br />
+
+        </div>
+        <div style={{backgroundColor:"#333333", color:"white", paddingBottom:"0.5em", paddingTop:"0.5em", textAlign:"center", fontSize:"1em"}}>
+          <div className="row" style={{fontSize:"0.8em"}}>
+            <div className="col-md-4">
+              <i className="fa fa-mobile"></i> (778) 938-6579
+            </div>
+            <div className="col-md-4">
+              <i className="fa fa-envelope-o"></i> danielcdcj@gmail.com
+            </div>
+            <div className="col-md-4">
+              <i className="fa fa-github"></i> @<a href="https://github.com/danielcdcj" style={{color:"white"}}>danielcdcj</a>
+            </div>
+          </div>
+          <br /><br />
           © Daniel Hsieh 2017
+          <br />
         </div>
       </div>
     );
