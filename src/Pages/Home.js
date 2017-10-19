@@ -86,7 +86,7 @@ class Home_Component extends Component {
             <div><SliderItem
               title={"Mummify"}
               projectPage={"https://devpost.com/software/mummify-lqigpf"}
-              technologies={"RSA, jQuery, Bootstrap"}
+              technologies={"RSA, jQuery"}
               imgSrc={"img/Mummify.png"}
               description={<div>Mummify lets users to easily do encryption on the chrome browser. It incorporates <span style={{color:"yellow"}}>RSA</span>, an asymmetric encryption algorithm, so that for online conversation, there's no need to exchange encryption key in person.<br />Mummify is an award winning project in <a href="https://nwhacks2016.devpost.com/" style={{color:"#42A469"}}>NWHacks 2016</a> for the <span style={{color:"yellow"}}>"Best Privacy, Security or Crypto Hack"</span> award from <a style={{color:"#4BB749"}} href="https://www.privateinternetaccess.com/">Private Internet Access</a>.</div>}
               /></div>
@@ -111,7 +111,7 @@ class Home_Component extends Component {
             <div><SliderItem
               title={"UmbraChat"}
               projectPage={"https://umbrachat.herokuapp.com/client.html"}
-              technologies={"Node.js, jQuery UI"}
+              technologies={"Node.js, jQuery UI, Angular.js"}
               imgSrc={"img/UmbraChat.png"}
               description={'A secure chat application for complete anonymity.'}
               /></div>
