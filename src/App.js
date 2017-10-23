@@ -57,11 +57,11 @@ class App extends Component {
 
     var fontSize = 16 + Math.pow(Math.max(vmin - 320, 0), 0.5) / 2;
     return (
-      <HashRouter>
+      <Router>
         <div style={{fontSize}}>
           <Route exact path="/" component={Home}/>
         </div>
-      </HashRouter>
+      </Router>
     );
   }
 }
