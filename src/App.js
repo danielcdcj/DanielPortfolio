@@ -3,7 +3,8 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  HashRouter
 } from 'react-router-dom'
 import FilterLink from './components/FilterLink';
 import Home from './Pages/Home';
@@ -56,11 +57,11 @@ class App extends Component {
 
     var fontSize = 16 + Math.pow(Math.max(vmin - 320, 0), 0.5) / 2;
     return (
-      <Router>
+      <HashRouter>
         <div style={{fontSize}}>
           <Route exact path="/" component={Home}/>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
