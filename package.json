@@ -1,5 +1,6 @@
 {
   "name": "web",
+  "homepage": "https://danielcdcj.github.io/DanielPortfolio/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
